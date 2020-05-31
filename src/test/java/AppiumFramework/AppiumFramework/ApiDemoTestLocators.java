@@ -17,7 +17,7 @@ public class ApiDemoTestLocators extends Base
 		AndroidDriver<AndroidElement> driver = capabilities("apiDemos");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		driver.findElementByXPath("//android.widget.TextView[@text='Preference']").click();
+		driver.findElementByXPath("//android.widget.TextView[@text='Preference1']").click();
 		driver.findElementByXPath("//android.widget.TextView[@text='3. Preference dependencies']").click();
 		driver.findElementById("android:id/checkbox").click();
 		

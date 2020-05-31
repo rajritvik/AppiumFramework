@@ -82,11 +82,12 @@ public class Base
 		if(device.contains("emulator"))
 		{
 			startEmulator();
+			Thread.sleep(6000);
 		}
 		
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, device);
 		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-		cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 20);
+		cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 14);
 		cap.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 		
 		driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
@@ -97,10 +98,10 @@ public class Base
 		
 	}
 	
-	public static void getScreenshot(String s) throws IOException
+	public static void getScreenshot(String scriptName) throws IOException
 	{
 		File src=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		File dest= new File("./screenshots/"+s+".png");
+		File dest= new File("./screenshots/"+scriptName+".png");
 		FileUtils.copyFile(src, dest);
 	}
 
