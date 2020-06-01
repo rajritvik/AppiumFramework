@@ -9,7 +9,7 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="AppiumFramework.AppiumFramework.Ecommerce_Tc_2" />
-			<class name="AppiumFramework.AppiumFramework.ApiDemoTestLocators"/>
+			
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

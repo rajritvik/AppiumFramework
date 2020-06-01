@@ -1,6 +1,7 @@
 package resources;
 
-import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -18,17 +19,22 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReporterNG implements IReporter {
 	private ExtentReports extent;
-	ExtentHtmlReporter htmlReporter;
+//	ExtentHtmlReporter htmlReporter;
+	ExtentSparkReporter reporter;
 
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) 
 	{
-		htmlReporter=new ExtentHtmlReporter("./Reports/htmlreport.html");
+//		htmlReporter=new ExtentHtmlReporter("./Reports/htmlreport.html");
+		reporter=new ExtentSparkReporter("./Reports/htmlreport"+getTime()+".html");
+		reporter.config().setTheme(com.aventstack.extentreports.reporter.configuration.Theme.DARK);
 		extent = new ExtentReports();
 		
-		extent.attachReporter(htmlReporter);
+//		extent.attachReporter(htmlReporter);
+		extent.attachReporter(reporter);
 
 		for (ISuite suite : suites) {
 			Map<String, ISuiteResult> result = suite.getResults();
@@ -45,7 +51,8 @@ public class ExtentReporterNG implements IReporter {
 		extent.flush();
 	}
 
-	private void buildTestNodes(IResultMap tests, Status status) {
+	private void buildTestNodes(IResultMap tests, Status status) 
+	{
 		ExtentTest test;
 
 		if (tests.size() > 0) {
@@ -64,15 +71,15 @@ public class ExtentReporterNG implements IReporter {
 					message = result.getThrowable().getMessage();
 
 				test.log((Status) status, message);
-
-				
 			}
 		}
 	}
-
-	private Date getTime(long millis) {
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTimeInMillis(millis);
-		return calendar.getTime();        
+	
+	private String getTime() {
+		Date date = new Date();
+		String strDateFormat = "dd-MM-yyyy-hh-mm-ss";
+		DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+		String formattedDate= dateFormat.format(date);
+		return formattedDate;       
 	}
 }

@@ -1,28 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 184.142 s <<< FAILURE! - in TestSuite
-AppiumFramework.AppiumFramework.ApiDemoTestLocators.apiDemoTest  Time elapsed: 60.295 s  <<< FAILURE!
-org.openqa.selenium.NoSuchElementException: 
-An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LENOVO-PC', ip: '127.0.0.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {app: C:\Users\Ritvik\eclipse-wor..., appPackage: io.appium.android.apis, automationName: UiAutomator2, databaseEnabled: false, desired: {app: C:\Users\Ritvik\eclipse-wor..., automationName: UiAutomator2, deviceName: emulator-5554, newCommandTimeout: 14, platformName: android}, deviceApiLevel: 27, deviceManufacturer: Google, deviceModel: Android SDK built for x86, deviceName: emulator-5554, deviceScreenDensity: 420, deviceScreenSize: 1080x1920, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 14, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 63, takesScreenshot: true, viewportRect: {height: 1731, left: 0, top: 63, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: e2deba29-28b9-4bdf-97e0-33a659d58eec
-*** Element info: {Using=xpath, value=//android.widget.TextView[@text='Preference1']}
-	at AppiumFramework.AppiumFramework.ApiDemoTestLocators.apiDemoTest(ApiDemoTestLocators.java:20)
-
-AppiumFramework.AppiumFramework.ApiDemoTestLocators.apiDemoTest  Time elapsed: 53.739 s  <<< FAILURE!
-org.openqa.selenium.NoSuchElementException: 
-An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LENOVO-PC', ip: '127.0.0.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {app: C:\Users\Ritvik\eclipse-wor..., appPackage: io.appium.android.apis, automationName: UiAutomator2, databaseEnabled: false, desired: {app: C:\Users\Ritvik\eclipse-wor..., automationName: UiAutomator2, deviceName: emulator-5554, newCommandTimeout: 14, platformName: android}, deviceApiLevel: 27, deviceManufacturer: Google, deviceModel: Android SDK built for x86, deviceName: emulator-5554, deviceScreenDensity: 420, deviceScreenSize: 1080x1920, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, newCommandTimeout: 14, pixelRatio: 2.625, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 63, takesScreenshot: true, viewportRect: {height: 1731, left: 0, top: 63, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: ad1a1cce-09c2-4d3f-8065-736d5e40cf8e
-*** Element info: {Using=xpath, value=//android.widget.TextView[@text='Preference1']}
-	at AppiumFramework.AppiumFramework.ApiDemoTestLocators.apiDemoTest(ApiDemoTestLocators.java:20)
-
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 172.511 s - in TestSuite

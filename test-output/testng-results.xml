@@ -1,51 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="4" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
       <![CDATA[Test Successfully passed]]>
     </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="148798" started-at="2020-05-30T14:49:58 IST" finished-at="2020-05-30T14:52:27 IST">
+  <suite name="Suite" duration-ms="54413" started-at="2020-06-01T16:51:48 IST" finished-at="2020-06-01T16:52:42 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="148798" started-at="2020-05-30T14:49:58 IST" finished-at="2020-05-30T14:52:27 IST">
+    <test name="Test" duration-ms="54413" started-at="2020-06-01T16:51:48 IST" finished-at="2020-06-01T16:52:42 IST">
       <class name="AppiumFramework.AppiumFramework.Ecommerce_Tc_2">
-        <test-method status="PASS" signature="killAllNodes()[pri:0, instance:AppiumFramework.AppiumFramework.Ecommerce_Tc_2@74a10858]" name="killAllNodes" is-config="true" duration-ms="5016" started-at="2020-05-30T14:49:58 IST" finished-at="2020-05-30T14:50:04 IST">
+        <test-method status="PASS" signature="killAllNodes()[pri:0, instance:AppiumFramework.AppiumFramework.Ecommerce_Tc_2@23fe1d71]" name="killAllNodes" is-config="true" duration-ms="5017" started-at="2020-06-01T16:51:48 IST" finished-at="2020-06-01T16:51:53 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- killAllNodes -->
-        <test-method status="PASS" signature="passedScenario()[pri:0, instance:AppiumFramework.AppiumFramework.Ecommerce_Tc_2@74a10858]" name="passedScenario" duration-ms="49234" started-at="2020-05-30T14:50:04 IST" finished-at="2020-05-30T14:50:53 IST">
+        <test-method status="PASS" signature="serviceStart()[pri:0, instance:AppiumFramework.AppiumFramework.Ecommerce_Tc_2@23fe1d71]" name="serviceStart" is-config="true" duration-ms="3347" started-at="2020-06-01T16:51:53 IST" finished-at="2020-06-01T16:51:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- serviceStart -->
+        <test-method status="PASS" signature="passedScenario()[pri:0, instance:AppiumFramework.AppiumFramework.Ecommerce_Tc_2@23fe1d71]" name="passedScenario" duration-ms="40522" started-at="2020-06-01T16:51:56 IST" finished-at="2020-06-01T16:52:37 IST">
           <reporter-output>
             <line>
               <![CDATA[Test Successfully passed]]>
             </line>
           </reporter-output>
         </test-method> <!-- passedScenario -->
+        <test-method status="PASS" signature="serviceStop()[pri:0, instance:AppiumFramework.AppiumFramework.Ecommerce_Tc_2@23fe1d71]" name="serviceStop" is-config="true" duration-ms="451" started-at="2020-06-01T16:52:37 IST" finished-at="2020-06-01T16:52:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- serviceStop -->
+        <test-method status="PASS" signature="stopEmulator()[pri:0, instance:AppiumFramework.AppiumFramework.Ecommerce_Tc_2@23fe1d71]" name="stopEmulator" is-config="true" duration-ms="5005" started-at="2020-06-01T16:52:37 IST" finished-at="2020-06-01T16:52:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopEmulator -->
       </class> <!-- AppiumFramework.AppiumFramework.Ecommerce_Tc_2 -->
-      <class name="AppiumFramework.AppiumFramework.ApiDemoTestLocators">
-        <test-method status="PASS" signature="apiDemoTest(java.lang.String)[pri:0, instance:AppiumFramework.AppiumFramework.ApiDemoTestLocators@23fe1d71]" name="apiDemoTest" duration-ms="46658" started-at="2020-05-30T14:50:53 IST" data-provider="InputData" finished-at="2020-05-30T14:51:39 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[helllo]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- apiDemoTest -->
-        <test-method status="PASS" signature="apiDemoTest(java.lang.String)[pri:0, instance:AppiumFramework.AppiumFramework.ApiDemoTestLocators@23fe1d71]" name="apiDemoTest" duration-ms="47779" started-at="2020-05-30T14:51:39 IST" data-provider="InputData" finished-at="2020-05-30T14:52:27 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[@#%$/]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- apiDemoTest -->
-      </class> <!-- AppiumFramework.AppiumFramework.ApiDemoTestLocators -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

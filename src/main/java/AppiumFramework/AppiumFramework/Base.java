@@ -13,13 +13,15 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 public class Base 
 {
@@ -60,15 +62,22 @@ public class Base
 		return service;
 	}
 	
+	@BeforeMethod
+	public void serviceStart()
+	{
+		service=startServer();
+		System.out.println("Server Started");
+	}
+	
 	public static void startEmulator() throws IOException, InterruptedException
 	{
 		Runtime.getRuntime().exec(System.getProperty("user.dir")+"/src/main/java/resources/startEmulator.bat");
-		Thread.sleep(15000);
+		Thread.sleep(10000);
 	}
 	
 	public static AndroidDriver<AndroidElement> capabilities(String appName) throws IOException, InterruptedException 
 	{
-		FileInputStream fis = new FileInputStream("C:\\Users\\Ritvik\\eclipse-workspace\\AppiumFramework\\src\\main\\java\\AppiumFramework\\AppiumFramework\\global.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/src/main/java/AppiumFramework/AppiumFramework/global.properties");
 		Properties prop = new Properties();
 		prop.load(fis);
 		
@@ -82,7 +91,7 @@ public class Base
 		if(device.contains("emulator"))
 		{
 			startEmulator();
-			Thread.sleep(6000);
+			System.out.println("Emulator Opening");
 		}
 		
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, device);
@@ -91,7 +100,6 @@ public class Base
 		cap.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 		
 		driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
-		
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 		return driver;
@@ -103,6 +111,23 @@ public class Base
 		File src=((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		File dest= new File("./screenshots/"+scriptName+".png");
 		FileUtils.copyFile(src, dest);
+	}
+	
+	@AfterMethod
+	public void serviceStop()
+	{
+		driver.closeApp();
+		
+		service.stop();
+		System.out.println("Server Stopped");
+	}
+	
+	@AfterTest
+	public static void stopEmulator() throws IOException, InterruptedException
+	{
+		Thread.sleep(5000);
+		Runtime.getRuntime().exec(System.getProperty("user.dir")+"/src/main/java/resources/stopEmulator.bat");
+		System.out.println("Emulator Closing");
 	}
 
 }

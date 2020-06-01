@@ -9,15 +9,13 @@ import AppiumFramework.AppiumFramework.Base;
 
 public class Listeners implements ITestListener 
 {
-
 	@Override
-	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
+	public void onTestFailure(ITestResult result) 
+	{
 		String scriptName=result.getName();
 		try {
 			Base.getScreenshot(scriptName);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
